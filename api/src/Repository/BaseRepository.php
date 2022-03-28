@@ -73,7 +73,7 @@ abstract class BaseRepository
      */
     protected function executeFetchQuery(string $query, array $params = []): array
     {
-        return $this->connection->executeQuery($query, $params)->fetchAll();
+        return $this->connection->executeQuery($query, $params)->fetchAllAssociative();
     }
 
     /**
