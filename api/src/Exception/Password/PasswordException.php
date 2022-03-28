@@ -10,6 +10,6 @@ class PasswordException extends BadRequestHttpException
 {
     public static function invalidLength(): self
     {
-        throw new self('Password must be at least 6 characters');
+        throw new self('La contraseña ha de contener mínimo 6 caracteres.');
     }
 }

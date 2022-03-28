@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
 class UserAlreadyExistException extends ConflictHttpException
 {
-    private const MESSAGE = 'User with email %s already exist';
+    private const MESSAGE = 'El usuario con el email %s ya existe';
 
     public static function fromEmail(string $email): self
     {

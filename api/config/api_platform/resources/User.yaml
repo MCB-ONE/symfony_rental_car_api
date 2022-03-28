@@ -10,7 +10,7 @@ App\Entity\User:
       denormalization_context:
         groups: [user_post]
       openapi_context:
-        summary: Register a new user
+        summary: Registrar nuevo usuario
   itemOperations:
     get:
       method: GET
