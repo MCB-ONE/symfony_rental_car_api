@@ -14,4 +14,9 @@ class UserNotFoundException extends NotFoundHttpException
     {
         throw new self(\sprintf(self::MESSAGE, $email));
     }
+
+    public static function fromUserIdAndToken(string $id, string $token): self
+    {
+        throw new self(\sprintf('Usuario con el id %s y token %s no encontrado', $id, $token));
+    }
 }
