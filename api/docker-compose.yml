@@ -1,8 +1,8 @@
 version: '3.5'
 
 services:
-  symfony-api-platform-web:
-    container_name: symfony-api-platform-web
+  rental-car-api-web:
+    container_name: rental-car-api-web
     build:
       context: ./docker/nginx
       args:
@@ -12,12 +12,12 @@ services:
     volumes:
       - ./public:/appdata/www/public
     depends_on:
-      - symfony-api-platform-be
+      - rental-car-api-be
     networks:
-      - symfony-api-platform-network
+      - rental-car-api-network
 
-  symfony-api-platform-be:
-    container_name: symfony-api-platform-be
+  rental-car-api-be:
+    container_name: rental-car-api-be
     build:
       context: docker/php
       args:
@@ -33,29 +33,29 @@ services:
       #      - ./docker/php/xdebug-macos.ini:/usr/local/etc/php/conf.d/xdebug.ini
       - ~/.ssh/id_rsa:/home/appuser/.ssh/id_rsa
     depends_on:
-      - symfony-api-platform-db
+      - rental-car-api-db
     networks:
-      - symfony-api-platform-network
+      - rental-car-api-network
 
-  symfony-api-platform-db:
-    container_name: symfony-api-platform-db
+  rental-car-api-db:
+    container_name: rental-car-api-db
     image: mysql:8.0
     ports:
       - 36000:3306
     environment:
-      MYSQL_DATABASE: symfony_db
+      MYSQL_DATABASE: rental_car_db
       MYSQL_USER: user
       MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: root
     command: mysqld --sql_mode="STRICT_ALL_TABLES,NO_ENGINE_SUBSTITUTION"
     volumes:
-      - symfony-api-platform-db-data:/var/lib/mysql
+      - rental-car-api-db-data:/var/lib/mysql
     networks:
-      - symfony-api-platform-network
+      - rental-car-api-network
 
 volumes:
-  symfony-api-platform-db-data:
+  rental-car-api-db-data:
 
 networks:
-  symfony-api-platform-network:
+  rental-car-api-network:
     external: true
