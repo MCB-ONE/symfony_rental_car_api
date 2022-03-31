@@ -37,6 +37,31 @@ App\Entity\User:
                   properties:
                     message:
                       type: string
+    login:
+      method: POST
+      route_name: api_login_check
+      openapi_context:
+        summary: Login de un usaurio en la API
+        requestBody:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  password:
+                    type: string
+        responses:
+          200:
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    token:
+                      type: string
   itemOperations:
     get:
       method: GET
@@ -48,4 +73,4 @@ App\Entity\User:
       denormalization_context:
         groups: [user_activate]
       openapi_context:
-        summary: Activa un usuario
+        summary: Activates a user

@@ -139,6 +139,7 @@ class User implements UserInterface
 
     public function getUsername(): string
     {
+        // Return email property because email is unique key and name is not unique key
         return $this->email;
     }
 
