@@ -8,8 +8,6 @@ use App\Entity\User;
 use App\Exception\Password\PasswordException;
 use App\Repository\UserRepository;
 use App\Service\Password\EncoderService;
-use App\Service\Request\RequestService;
-use Symfony\Component\HttpFoundation\Request;
 
 class ChangePasswordService
 {
@@ -27,9 +25,10 @@ class ChangePasswordService
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function changePassword(User $user, string $oldPassword, string $newPassword): User
+    public function changePassword(string $userId, string $oldPassword, string $newPassword): User
     {
-        
+        $user= $this->userRepository->findOneById($userId);
+
         if(!$this->encoderService->isValidPassword($user, $oldPassword)){
             throw PasswordException::oldPasswordDoesNotMatch();
         }

@@ -27,7 +27,7 @@ class ChangePassword
     public function __invoke(Request $request, User $user): User
     {
         return $this->changePasswordService->changePassword(
-            $user,
+            $user->getId(),
             RequestService::getField($request, 'oldPassword'),
             RequestService::getField($request, 'newPassword')
         );

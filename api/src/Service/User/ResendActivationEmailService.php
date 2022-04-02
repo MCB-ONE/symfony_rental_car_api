@@ -24,12 +24,15 @@ class ResendActivationEmailService
         $this->messageBus = $messageBus;
     }
 
-    public function resend(Request $request): void
+    /**
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function resend(string $email): void
     {
-        $email = RequestService::getField($request, 'email');
         $user = $this->userRepository->findOneByEmailOrFail($email);
 
-        if($user->isActive()){
+        if ($user->isActive()) {
             throw UserIsActiveException::fromEmail($email);
         }
 
@@ -40,7 +43,5 @@ class ResendActivationEmailService
             new UserRegisteredMessage($user->getId(), $user->getName(), $user->getEmail(), $user->getToken()),
             [new AmqpStamp(RoutingKey::USER_QUEUE)]
         );
-
     }
 }
-

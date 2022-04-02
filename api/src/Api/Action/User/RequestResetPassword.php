@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Api\Action\User;
 
+use App\Service\Request\RequestService;
 use App\Service\User\RequestResetPasswordService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +24,7 @@ class RequestResetPassword
      */
     public function __invoke(Request $request): JsonResponse
     {
-        $this->resetPasswordService->send($request);
+        $this->resetPasswordService->send(RequestService::getField($request, 'email'));
         return new JsonResponse(['message' => 'Solicitud de reseteo de contraseña enviada.']);
     }
 }
