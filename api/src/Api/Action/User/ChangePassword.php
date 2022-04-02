@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Api\Action\User;
 
 use App\Entity\User;
+use App\Service\Request\RequestService;
 use App\Service\User\ChangePasswordService;
 use App\Service\User\RequestResetPasswordService;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -25,7 +26,12 @@ class ChangePassword
      */
     public function __invoke(Request $request, User $user): User
     {
-        return $this->changePasswordService->changePassword($request, $user);
+        return $this->changePasswordService->changePassword(
+            $user,
+            RequestService::getField($request, 'oldPassword'),
+            RequestService::getField($request, 'newPassword')
+        );
     }
+
 
 }
