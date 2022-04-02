@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=2
+ReferrerUrl=http://localhost:15672/
+HostUrl=http://localhost:15672/api/definitions?download=rabbit_9781df38b6ad_2022-4-1.json&auth=Z3Vlc3Q6Z3Vlc3Q%3D

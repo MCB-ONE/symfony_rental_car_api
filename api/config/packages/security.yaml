@@ -12,6 +12,10 @@ security:
             pattern: ^/api/v1/users/register
             methods: [POST]
             security: false
+        activation_email:
+            pattern: ^/api/v1/users/.*/activate
+            methods: [ PUT ]
+            security: false
         resend_activation_email:
             pattern: ^/api/v1/users/resend_activation_email
             methods: [POST]
@@ -19,6 +23,14 @@ security:
         docs:
             pattern: ^/api/v1/docs
             methods: [GET]
+            security: false
+        request_reset_password:
+            pattern: ^/api/v1/users/request_reset_password
+            methods: [POST]
+            security: false
+        reset_password:
+            pattern: ^/api/v1/users/reset_password
+            methods: [POST]
             security: false
         login:
             pattern: /api/v1/users/login
