@@ -12,4 +12,9 @@ class PasswordException extends BadRequestHttpException
     {
         throw new self('La contraseña ha de contener mínimo 6 caracteres.');
     }
+
+    public static function oldPasswordDoesNotMatch(): self
+    {
+        throw new self('La contraseña antigua no coincide.');
+    }
 }
