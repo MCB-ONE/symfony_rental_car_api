@@ -22,11 +22,11 @@ class ResetPassword
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function __invoke(Request $request): User
+    public function __invoke(Request $request, string $id): User
     {
 
         return $this->resetPasswordService->reset(
-            RequestService::getField($request, 'userId'),
+            $id,
             RequestService::getField($request, 'resetPasswordToken'),
             RequestService::getField($request, 'password')
         );
