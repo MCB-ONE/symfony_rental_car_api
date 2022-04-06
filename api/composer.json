@@ -15,6 +15,7 @@
         "doctrine/doctrine-bundle": "^2",
         "doctrine/doctrine-migrations-bundle": "^2",
         "doctrine/orm": "^2",
+        "facebook/graph-sdk": "^5.7",
         "league/flysystem-aws-s3-v3": "^1.0",
         "league/flysystem-bundle": "^1.5",
         "league/flysystem-memory": "^1.0",
@@ -54,7 +55,10 @@
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
     "autoload": {
         "psr-4": {
