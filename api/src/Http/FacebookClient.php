@@ -19,15 +19,15 @@ class FacebookClient
         $this->client = new Facebook([
             'app_id' => $facebookClientId,
             'app_secret' => $facebookSecret,
-            'default_graph_version' => $facebookGraphVersion
+            'default_graph_version' => $facebookGraphVersion,
         ]);
     }
 
     /**
      * @throws FacebookSDKException
      */
-    public function get(string $endpoint, string $accessToken ): FacebookResponse
+    public function get(string $endpoint, string $accessToken): FacebookResponse
     {
-        return $this->client->get($endpoint, $accessToken );
+        return $this->client->get($endpoint, $accessToken);
     }
 }
