@@ -25,6 +25,7 @@ class ResendActivationEmail
     public function __invoke(Request $request): JsonResponse
     {
         $this->activationEmailService->resend(RequestService::getField($request, 'email'));
+
         return new JsonResponse(['message' => 'Mensaje de activación enviado']);
     }
 }

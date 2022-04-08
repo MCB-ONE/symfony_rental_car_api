@@ -19,6 +19,5 @@ class JWTCreatedListener
         unset($payload['roles']);
 
         $event->setData($payload);
-
     }
 }

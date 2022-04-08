@@ -13,7 +13,7 @@ class Authorization
 {
     private FacebookService $facebookService;
 
-    public function __construct(FacebookService $facebookService )
+    public function __construct(FacebookService $facebookService)
     {
         $this->facebookService = $facebookService;
     }

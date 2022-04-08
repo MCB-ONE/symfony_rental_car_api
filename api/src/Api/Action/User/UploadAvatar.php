@@ -25,5 +25,4 @@ class UploadAvatar
     {
         return $this->uploadAvatarService->uploadAvatar($request, $user);
     }
-
 }

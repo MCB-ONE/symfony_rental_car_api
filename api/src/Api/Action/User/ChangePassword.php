@@ -7,13 +7,11 @@ namespace App\Api\Action\User;
 use App\Entity\User;
 use App\Service\Request\RequestService;
 use App\Service\User\ChangePasswordService;
-use App\Service\User\RequestResetPasswordService;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class ChangePassword
 {
-    private  ChangePasswordService $changePasswordService;
+    private ChangePasswordService $changePasswordService;
 
     public function __construct(ChangePasswordService $changePasswordService)
     {
@@ -32,6 +30,4 @@ class ChangePassword
             RequestService::getField($request, 'newPassword')
         );
     }
-
-
 }

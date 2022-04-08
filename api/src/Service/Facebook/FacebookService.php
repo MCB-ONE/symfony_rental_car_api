@@ -38,7 +38,6 @@ class FacebookService
      * @throws ORMException
      * @throws OptimisticLockException
      */
-
     public function authorize(string $accessToken)
     {
         try {
@@ -56,7 +55,7 @@ class FacebookService
 
         try {
             $user = $this->userRepository->findOneByEmailOrFail($email);
-        } catch (UserNotFoundException $e ) {
+        } catch (UserNotFoundException $e) {
             $user = $this->createUser($graphUser->getName(), $email);
         }
 
@@ -67,8 +66,8 @@ class FacebookService
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    private function createUser(string $name, string $email): User{
-
+    private function createUser(string $name, string $email): User
+    {
         $user = new User($name, $email);
         $user->setPassword($this->encoderService->generateEncodedPassword($user, \sha1(\uniqid())));
         $user->setActive(true);

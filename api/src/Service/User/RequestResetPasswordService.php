@@ -7,8 +7,6 @@ namespace App\Service\User;
 use App\Messenger\Message\RequestResetPasswordMessage;
 use App\Messenger\RoutingKey;
 use App\Repository\UserRepository;
-use App\Service\Request\RequestService;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Messenger\Bridge\Amqp\Transport\AmqpStamp;
 use Symfony\Component\Messenger\MessageBusInterface;
 
@@ -27,7 +25,7 @@ class RequestResetPasswordService
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function send(string $email): Void
+    public function send(string $email): void
     {
         $user = $this->userRepository->findOneByEmailOrFail($email);
         $user->setResetPasswordToken(\sha1(\uniqid()));
