@@ -1,0 +1,12 @@
+App\Entity\Vehicle:
+  attributes:
+    id:
+      groups: [vehicle_read]
+    plateNumber:
+      groups: [vehicle_read, vehicle_post]
+    modelYear:
+      groups: [vehicle_read, vehicle_post]
+    createdAt:
+      groups: [vehicle_read]
+    updatedAt:
+      groups: [vehicle_read]

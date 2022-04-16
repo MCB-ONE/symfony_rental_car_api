@@ -3,22 +3,11 @@
     <entity name="App\Entity\Vehicle" table="vehicle">
         <id name="id" type="string" length="36"/>
 
-        <field name="model" length="100"/>
-        <field name="overview" length="1000" nullable="true"/>
-        <field name="pricePerDay" type="decimal" scale="5" precision="2"/>
-        <field name="stock" type="integer" />
-        <field name="availabilityFlag" type="boolean" />
-        <field name="fuelType" length="50"/>
+        <field name="plateNumber" length="7" />
         <field name="modelYear" type="integer" />
-        <field name="seatingCapacity" type="integer"/>
-        <field name="image" length="255" nullable="true"/>
-        <field name="gearSystem" length="50"/>
-        <field name="createdAt" type="datetime"/>
-        <field name="updatedAt" type="datetime"/>
-        <indexes>
-            <index name="IDX_brand_id" columns="brand_id" />
-        </indexes>
-        <many-to-one field="brand" target-entity="Brand" />
+        <unique-constraints>
+            <unique-constraint columns="plate_number" name="UNIQ_vehicle_plateNumber" />
+        </unique-constraints>
         <lifecycle-callbacks>
             <lifecycle-callback type="preUpdate" method="markAsUpdated"/>
         </lifecycle-callbacks>
