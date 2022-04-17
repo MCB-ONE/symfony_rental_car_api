@@ -1,0 +1,17 @@
+App\Entity\Model:
+  Model-0:
+    __construct:
+      name: Focus
+      pricePerDay: 35.50
+      stock: 0
+      fuelType: Diesel
+      seatingCapacity: 5
+      gearSystem: Manual
+  Model-1:
+    __construct:
+      name: Leon
+      pricePerDay: 30
+      stock: 0
+      fuelType: Diesel
+      seatingCapacity: 5
+      gearSystem: Manual

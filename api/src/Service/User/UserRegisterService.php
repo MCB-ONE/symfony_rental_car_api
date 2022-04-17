@@ -38,7 +38,7 @@ class UserRegisterService
 
         try {
             $this->userRepository->save($user);
-        } catch (ORMException $e) {
+        } catch (\Exception $e) {
             throw UserAlreadyExistException::fromEmail($email);
         }
 

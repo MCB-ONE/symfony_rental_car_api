@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Uid\Uuid;
 
 class Model
@@ -17,21 +19,21 @@ class Model
     private ?string $image;
     private string $gearSystem;
     private ?Brand $brand;
+    private Collection $vehicles;
     private \DateTime $createdAt;
     private \DateTime $updatedAt;
 
     public function __construct(
-         string $name,
-         ?string $overview,
-         float $pricePerDay,
-         int $stock,
-         bool $availabilityFlag = true,
-         string $fuelType,
-         int $seatingCapacity,
-         ?string $image,
-         string $gearSystem
-    )
-    {
+        string $name,
+        ?string $overview = null,
+        float $pricePerDay,
+        int $stock,
+        bool $availabilityFlag = false,
+        string $fuelType,
+        int $seatingCapacity,
+        ?string $image = null,
+        string $gearSystem
+    ) {
         $this->id = Uuid::v4()->toRfc4122();
         $this->name = $name;
         $this->overview = $overview;
@@ -45,9 +47,10 @@ class Model
         $this->brand = null;
         $this->createdAt = new \DateTime();
         $this->markAsUpdated();
+        $this->vehicles = new ArrayCollection();
     }
 
-    
+
     public function getId(): string
     {
         return $this->id;
@@ -63,7 +66,7 @@ class Model
         $this->name = $name;
     }
 
-    
+
     public function getOverview(): ?string
     {
         return $this->overview;
@@ -170,5 +173,27 @@ class Model
         $this->brand = $brand;
     }
 
+    /**
+     * @return ArrayCollection|Collection
+     */
+    public function getVehicles() 
+    {
+        return $this->vehicles;
+    }
 
+    public function addVehicle(Vehicle $vehicle): void
+    {
+        if (!$this->vehicles->contains($vehicle)){
+            $this->vehicles->add($vehicle);
+        }
+
+    }
+
+    public function removeVehicle(Vehicle $vehicle): void
+    {
+        if ($this->vehicles->contains($vehicle)){
+            $this->vehicles->removeElement($vehicle);
+        }
+        
+    }
 }

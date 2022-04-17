@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service\Vehicle;
 
+use App\Entity\Model;
 use App\Entity\Vehicle;
 use App\Exception\Vehicle\VehicleAlreadyExistException;
 use App\Repository\VehicleRepository;
@@ -22,13 +23,13 @@ class VehicleCreateService
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function create(string $plateNumber, int $modelYear): Vehicle
+    public function create(string $plateNumber, int $modelYear, Model $model): Vehicle
     {
-        $vehicle = new Vehicle($plateNumber, $modelYear);
+        $vehicle = new Vehicle($plateNumber, $modelYear, $model);
 
         try {
             $this->vehicleRepository->save($vehicle);
-        } catch (ORMException $e) {
+        } catch (\Exception $e) {
             throw VehicleAlreadyExistException::fromPlateNumber($plateNumber);
         }
 

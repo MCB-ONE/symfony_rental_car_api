@@ -1,0 +1,16 @@
+App\Entity\Vehicle:
+  Vehicle-0:
+    __construct:
+      plateNumber: 1234JSJ
+      modelYear: 2019
+      model: 'Model-0'
+  Vehicle-1:
+    __construct:
+      plateNumber: 6362DSD
+      modelYear: 2020
+      model: 'Model-0'
+  Vehicle-2:
+    __construct:
+      plateNumber: 9942AWW
+      modelYear: 2021
+      model: 'Model-1'

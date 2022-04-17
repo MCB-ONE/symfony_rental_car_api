@@ -26,7 +26,8 @@ class Create
     {
         return $this->vehicleCreateService->create(
             RequestService::getField($request, 'plateNumber'),
-            RequestService::getField($request, 'modelYear')
+            RequestService::getField($request, 'modelYear'),
+            RequestService::getField($request, 'model'),
         );
     }
 }

@@ -3,9 +3,9 @@ App\Entity\Vehicle:
     id:
       groups: [vehicle_read]
     plateNumber:
-      groups: [vehicle_read, vehicle_post]
+      groups: [vehicle_read, vehicle_post, vehicle_update]
     modelYear:
-      groups: [vehicle_read, vehicle_post]
+      groups: [vehicle_read, vehicle_post, vehicle_update]
     createdAt:
       groups: [vehicle_read]
     updatedAt:

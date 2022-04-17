@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping">
-    <entity name="App\Entity\Model" table="Model">
+    <entity name="App\Entity\Model" table="model">
         <id name="id" type="string" length="36"/>
 
         <field name="name" length="100"/>
         <!-- <field name="brandId" length="36" nullable="true"/> -->
         <field name="overview" length="1000" nullable="true"/>
-        <field name="pricePerDay" type="decimal" scale="5" precision="2"/>
+        <field name="pricePerDay" type="float" scale="2" precision="5"/>
         <field name="stock" type="integer" />
         <field name="availabilityFlag" type="boolean" />
         <field name="fuelType" length="50"/>
@@ -15,7 +15,10 @@
         <field name="gearSystem" length="50"/>
         <field name="createdAt" type="datetime"/>
         <field name="updatedAt" type="datetime"/>
-
+        <unique-constraints>
+            <unique-constraint columns="name" name="UNIQ_model_name" />
+        </unique-constraints>
+        <one-to-many field="vehicles" target-entity="App\Entity\Vehicle" mapped-by="model"/> -->
         <!-- <indexes>
             <index name="IDX_brand_id" columns="brand_id" />
         </indexes>

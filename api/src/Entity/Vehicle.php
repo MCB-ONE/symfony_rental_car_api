@@ -9,17 +9,20 @@ class Vehicle
     private string $id;
     private string $plateNumber;
     private int $modelYear;
+    private Model $model;
     private \DateTime $createdAt;
     private \DateTime $updatedAt;
 
     public function __construct(
         string $plateNumber,
-        int $modelYear
+        int $modelYear,
+        Model $model
     )
     {
         $this->id = Uuid::v4()->toRfc4122();
         $this->plateNumber = $plateNumber;
         $this->modelYear = $modelYear;
+        $this->model = $model;
         $this->createdAt = new \DateTime();
         $this->markAsUpdated();
     }
@@ -48,6 +51,16 @@ class Vehicle
     public function setModelYear(int $modelYear): void
     {
         $this->modelYear = $modelYear;
+    }
+
+    public function getModel(): Model
+    {
+        return $this->model;
+    }
+
+    public function setModel(Model $model): void
+    {
+        $this->model = $model;
     }
 
     public function getCreatedAt(): \DateTime

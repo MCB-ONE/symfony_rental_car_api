@@ -14,3 +14,7 @@ App\Entity\Vehicle:
   itemOperations:
     get:
       method: GET
+    put:
+      method: PUT
+      denormalization_context:
+        groups: [vehicle_update]

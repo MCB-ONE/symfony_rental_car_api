@@ -5,9 +5,15 @@
 
         <field name="plateNumber" length="7" />
         <field name="modelYear" type="integer" />
+        <field name="createdAt" type="datetime"/>
+        <field name="updatedAt" type="datetime"/>
         <unique-constraints>
             <unique-constraint columns="plate_number" name="UNIQ_vehicle_plateNumber" />
         </unique-constraints>
+        <many-to-one field="model" target-entity="App\Entity\Model" inversed-by="vehicles" />
+        <indexes>
+            <index columns="model_id" name="IDX_vehicle_model_id" />
+        </indexes>
         <lifecycle-callbacks>
             <lifecycle-callback type="preUpdate" method="markAsUpdated"/>
         </lifecycle-callbacks>
