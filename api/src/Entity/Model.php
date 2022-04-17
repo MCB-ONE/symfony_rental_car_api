@@ -162,7 +162,6 @@ class Model
         $this->updatedAt = new \DateTime();
     }
 
-
     public function getBrand(): ?Brand
     {
         return $this->brand;
@@ -194,6 +193,24 @@ class Model
         if ($this->vehicles->contains($vehicle)){
             $this->vehicles->removeElement($vehicle);
         }
-        
     }
+
+    
+    public function toArray(): array {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'overview' => $this->overview,
+            'pricePerDay' => $this->pricePerDay,
+            'stock' => $this->stock,
+            'availabilityFlag' => $this->availabilityFlag,
+            'fuelType' => $this->fuelType,
+            'seatingCapacity' => $this->seatingCapacity,
+            'gearSystem' => $this->gearSystem,
+            'vehicles' => $this->vehicles->toArray(),
+            'createdAt' => $this->createdAt,
+            'updatedAt' => $this->updatedAt
+        ];
+    }
+
 }

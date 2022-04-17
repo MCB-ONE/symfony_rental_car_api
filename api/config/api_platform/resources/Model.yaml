@@ -1,0 +1,27 @@
+App\Entity\Model:
+  attributes:
+    normalization_context:
+      groups: [model_read]
+  collectionOperations:
+    create:
+      method: POST
+      path: /model/create
+      controller: App\Api\Action\Model\Create
+      denormalization_context:
+        groups: [model_post]
+      openapi_context:
+        summary: Create a new vehicle Model
+  itemOperations:
+    get:
+      method: GET
+    put:
+      method: PUT
+      denormalization_context:
+        groups: [model_update]
+  properties: 
+    vehicles: 
+      subresource:
+        resourceClass: App\Entity\Vehicle
+        collection: true
+        maxDepth: 1
+        

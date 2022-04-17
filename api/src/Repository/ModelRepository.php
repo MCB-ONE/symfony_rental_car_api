@@ -16,6 +16,7 @@ class ModelRepository extends BaseRepository
 
     public function findOneById(string $id): Model
     {
+        
         if (null === $model = $this->objectRepository->findOneBy(['id' => $id])) {
             throw ModelNotFoundException::fromModelId($id);
         }

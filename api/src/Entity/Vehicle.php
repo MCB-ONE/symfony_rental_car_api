@@ -78,5 +78,13 @@ class Vehicle
         $this->updatedAt = new \DateTime();
     }
 
+    public function toArray(): array {
+        return [
+            'id' => $this->id,
+            'plateNumber' => $this->plateNumber,
+            'modelYear' => $this->modelYear,
+        ];
+    }
+
 
 }

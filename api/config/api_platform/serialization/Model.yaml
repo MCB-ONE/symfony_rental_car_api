@@ -1,0 +1,26 @@
+App\Entity\Model:
+  attributes:
+    id:
+      groups: [model_read]
+    name:
+      groups: [model_read, vehicle_post]
+    overview:
+      groups: [model_read, vehicle_post]
+    pricePerDay:
+      groups: [model_read, vehicle_post]
+    stock:
+      groups: [model_read, vehicle_post]
+    availabilityFlag:
+      groups: [model_read, vehicle_post]
+    seatingCapacity:
+      groups: [model_read, vehicle_post]
+    image:
+      groups: [model_read, vehicle_post]
+    gearSystem:
+      groups: [model_read, vehicle_post]
+    vehicles:
+      groups: [model_read, vehicle_post]
+    createdAt:
+      groups: [model_read]
+    updatedAt:
+      groups: [model_read]

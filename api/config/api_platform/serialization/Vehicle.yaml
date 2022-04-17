@@ -6,6 +6,8 @@ App\Entity\Vehicle:
       groups: [vehicle_read, vehicle_post, vehicle_update]
     modelYear:
       groups: [vehicle_read, vehicle_post, vehicle_update]
+    model:
+      groups: [vehicle_read]
     createdAt:
       groups: [vehicle_read]
     updatedAt:
