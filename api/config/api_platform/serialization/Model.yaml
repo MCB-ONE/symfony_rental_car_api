@@ -3,23 +3,25 @@ App\Entity\Model:
     id:
       groups: [model_read]
     name:
-      groups: [model_read, vehicle_post]
+      groups: [model_read, model_post]
     overview:
-      groups: [model_read, vehicle_post]
+      groups: [model_read, model_post]
     pricePerDay:
-      groups: [model_read, vehicle_post]
+      groups: [model_read, model_post]
     stock:
-      groups: [model_read, vehicle_post]
+      groups: [model_read, model_post]
     availabilityFlag:
-      groups: [model_read, vehicle_post]
+      groups: [model_read, model_post]
     seatingCapacity:
-      groups: [model_read, vehicle_post]
+      groups: [model_read, model_post]
+    fuelType:
+      groups: [model_read, model_post]
     image:
-      groups: [model_read, vehicle_post]
+      groups: [model_read, model_post]
     gearSystem:
-      groups: [model_read, vehicle_post]
+      groups: [model_read, model_post]
     vehicles:
-      groups: [model_read, vehicle_post]
+      groups: [model_read, model_post]
     createdAt:
       groups: [model_read]
     updatedAt:

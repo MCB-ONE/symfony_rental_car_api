@@ -24,6 +24,7 @@ class Create
      */
     public function __invoke(Request $request): Vehicle
     {
+        dump(RequestService::getField($request, 'model'));
         return $this->vehicleCreateService->create(
             RequestService::getField($request, 'plateNumber'),
             RequestService::getField($request, 'modelYear'),

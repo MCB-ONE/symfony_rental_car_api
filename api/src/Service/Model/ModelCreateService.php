@@ -47,7 +47,7 @@ class ModelCreateService
         );
 
         try {
-            $this->vehicleRepository->save($model);
+            $this->modelRepository->save($model);
         } catch (\Exception $e) {
             throw ModelAlreadyExistException::fromName($name);
         }

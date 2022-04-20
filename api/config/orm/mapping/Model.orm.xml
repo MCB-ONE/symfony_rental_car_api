@@ -18,13 +18,11 @@
         <unique-constraints>
             <unique-constraint columns="name" name="UNIQ_model_name" />
         </unique-constraints>
-        <one-to-many field="vehicles" target-entity="App\Entity\Vehicle" mapped-by="model"/> -->
+        <one-to-many field="vehicles" target-entity="App\Entity\Vehicle" mapped-by="model"/>
         <!-- <indexes>
             <index name="IDX_brand_id" columns="brand_id" />
         </indexes>
-
         <many-to-one field="brand" target-entity="Brand" /> -->
-
         <lifecycle-callbacks>
             <lifecycle-callback type="preUpdate" method="markAsUpdated"/>
         </lifecycle-callbacks>

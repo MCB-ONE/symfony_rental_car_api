@@ -18,7 +18,7 @@ class Model
     private int $seatingCapacity;
     private ?string $image;
     private string $gearSystem;
-    private ?Brand $brand;
+    /* private ?Brand $brand; */
     private Collection $vehicles;
     private \DateTime $createdAt;
     private \DateTime $updatedAt;
@@ -33,6 +33,7 @@ class Model
         int $seatingCapacity,
         ?string $image = null,
         string $gearSystem
+        /* private ?Brand $brand; */
     ) {
         $this->id = Uuid::v4()->toRfc4122();
         $this->name = $name;
@@ -44,7 +45,7 @@ class Model
         $this->seatingCapacity = $seatingCapacity;
         $this->image = $image;
         $this->gearSystem = $gearSystem;
-        $this->brand = null;
+        /* $this->brand = null; */
         $this->createdAt = new \DateTime();
         $this->markAsUpdated();
         $this->vehicles = new ArrayCollection();
@@ -162,7 +163,7 @@ class Model
         $this->updatedAt = new \DateTime();
     }
 
-    public function getBrand(): ?Brand
+    /* public function getBrand(): ?Brand
     {
         return $this->brand;
     }
@@ -170,7 +171,7 @@ class Model
     public function setBrand(?Brand $brand): void
     {
         $this->brand = $brand;
-    }
+    } */
 
     /**
      * @return ArrayCollection|Collection
