@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Service\File;
 
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use League\Flysystem\FilesystemInterface;
 use League\Flysystem\AdapterInterface;
+use League\Flysystem\FilesystemInterface;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 

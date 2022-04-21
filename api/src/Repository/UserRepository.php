@@ -52,7 +52,6 @@ class UserRepository extends BaseRepository
         return $user;
     }
 
-
     /**
      * @throws ORMException
      * @throws OptimisticLockException

@@ -24,7 +24,6 @@ class ActivateAccountService
     {
         $user = $this->userRepository->findOneInactiveByIdAndTokenOrFail($id, $token);
 
-
         $user->setActive(true);
         $user->setToken(null);
 

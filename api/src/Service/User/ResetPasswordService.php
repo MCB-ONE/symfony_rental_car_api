@@ -7,12 +7,9 @@ namespace App\Service\User;
 use App\Entity\User;
 use App\Repository\UserRepository;
 use App\Service\Password\EncoderService;
-use App\Service\Request\RequestService;
-use Symfony\Component\HttpFoundation\Request;
 
 class ResetPasswordService
 {
-
     private UserRepository $userRepository;
     private EncoderService $encoderService;
 
@@ -28,7 +25,6 @@ class ResetPasswordService
      */
     public function reset(string $userId, string $resetPasswordToken, string $password): User
     {
-
         $user = $this->userRepository->findOneByIdAndResetPasswordToken($userId, $resetPasswordToken);
         $user->setPassword($this->encoderService->generateEncodedPassword($user, $password));
 

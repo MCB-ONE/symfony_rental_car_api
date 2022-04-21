@@ -33,7 +33,6 @@ class UserRegisterService
      */
     public function create(string $name, string $email, string $password): User
     {
-
         $user = new User($name, $email);
         $user->setPassword($this->encoderService->generateEncodedPassword($user, $password));
 

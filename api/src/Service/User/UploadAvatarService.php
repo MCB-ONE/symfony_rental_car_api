@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UploadAvatarService
 {
-
     private UserRepository $userRepository;
     private FileService $fileService;
     private string $mediaPath;
@@ -23,7 +22,6 @@ class UploadAvatarService
         $this->mediaPath = $mediaPath;
     }
 
-
     /**
      * @throws ORMException
      * @throws OptimisticLockException
@@ -33,8 +31,8 @@ class UploadAvatarService
         $file = $this->fileService->validateFile($request, FileService::AVATAR_INPUT_NAME);
 
         $this->fileService->deleteFile($user->getAvatar());
-        
-        $fileName = $this-> fileService->uploadFile($file, FileService::AVATAR_INPUT_NAME);
+
+        $fileName = $this->fileService->uploadFile($file, FileService::AVATAR_INPUT_NAME);
 
         $user->setAvatar($fileName);
 

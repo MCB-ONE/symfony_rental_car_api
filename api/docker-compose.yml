@@ -39,7 +39,8 @@ services:
 
   rental-car-api-db:
     container_name: rental-car-api-db
-    image: mysql:8.0
+    build:
+      context: ./docker/database
     ports:
       - 36000:3306
     environment:

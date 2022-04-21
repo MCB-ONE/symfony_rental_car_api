@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ResetPassword
 {
-    private  ResetPasswordService $resetPasswordService;
+    private ResetPasswordService $resetPasswordService;
 
     public function __construct(ResetPasswordService $resetPasswordService)
     {
@@ -24,12 +24,10 @@ class ResetPassword
      */
     public function __invoke(Request $request, string $id): User
     {
-
         return $this->resetPasswordService->reset(
             $id,
             RequestService::getField($request, 'resetPasswordToken'),
             RequestService::getField($request, 'password')
         );
     }
-
 }
