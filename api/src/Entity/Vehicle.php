@@ -8,21 +8,24 @@ class Vehicle
 {
     private string $id;
     private string $plateNumber;
-    private int $modelYear;
     private Model $model;
+    private bool $availabilityFlag;
+    private int $registrationYear;
     private \DateTime $createdAt;
     private \DateTime $updatedAt;
 
     public function __construct(
         string $plateNumber,
-        int $modelYear,
-        Model $model
+        Model $model,
+        bool $availabilityFlag = true,
+        int $registrationYear
     )
     {
         $this->id = Uuid::v4()->toRfc4122();
         $this->plateNumber = $plateNumber;
-        $this->modelYear = $modelYear;
         $this->model = $model;
+        $this->availabilityFlag = $availabilityFlag;
+        $this->registrationYear = $registrationYear;
         $this->createdAt = new \DateTime();
         $this->markAsUpdated();
     }
@@ -43,16 +46,6 @@ class Vehicle
         $this->plateNumber = $plateNumber;
     }
 
-    public function getModelYear(): int
-    {
-        return $this->modelYear;
-    }
-
-    public function setModelYear(int $modelYear): void
-    {
-        $this->modelYear = $modelYear;
-    }
-
     public function getModel(): Model
     {
         return $this->model;
@@ -61,6 +54,26 @@ class Vehicle
     public function setModel(Model $model): void
     {
         $this->model = $model;
+    }
+
+    public function getavAilabilityFlag(): bool
+    {
+        return $this->availabilityFlag;
+    }
+
+    public function setAvailabilityFlag(bool $availabilityFlag): void
+    {
+        $this->availabilityFlag = $availabilityFlag;
+    }
+
+    public function getRegistrationYear(): int
+    {
+        return $this->registrationYear;
+    }
+
+    public function setRegistrationYear(int $registrationYear): void
+    {
+        $this->registrationYear = $registrationYear;
     }
 
     public function getCreatedAt(): \DateTime
@@ -82,7 +95,7 @@ class Vehicle
         return [
             'id' => $this->id,
             'plateNumber' => $this->plateNumber,
-            'modelYear' => $this->modelYear,
+            'registrationYear' => $this->registrationYear,
         ];
     }
 

@@ -26,12 +26,16 @@ class VehicleCreateService
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function create(string $plateNumber, int $modelYear, string $modelId): Vehicle
-    {
+    public function create(
+        string $plateNumber,
+        string $modelId,
+        bool $availabilityFlag = true,
+        int $registrationYear
+    ): Vehicle {
 
         $model = $this->modelRepository->findOneById($modelId);
         dump($model);
-        $vehicle = new Vehicle($plateNumber, $modelYear, $model);
+        $vehicle = new Vehicle($plateNumber, $model, $availabilityFlag, $registrationYear);
 
         try {
             $this->vehicleRepository->save($vehicle);

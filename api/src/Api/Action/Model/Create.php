@@ -28,8 +28,6 @@ class Create
             RequestService::getField($request, 'name'),
             RequestService::getField($request, 'overview'),
             RequestService::getField($request, 'pricePerDay'),
-            RequestService::getField($request, 'stock'),
-            RequestService::getField($request, 'availabilityFlag'),
             RequestService::getField($request, 'fuelType'),
             RequestService::getField($request, 'seatingCapacity'),
             RequestService::getField($request, 'image'),

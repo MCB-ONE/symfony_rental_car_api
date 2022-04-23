@@ -5,7 +5,7 @@ services:
         autowire: true
         autoconfigure: true
         bind:
-            $mediaPath:             '%env(resolve:SUBDOMAIN)%'
+            $mediaPath:             '%env(resolve:AWS_SUBDOMAIN)%'
             $facebookClientId:      '%env(resolve:FACEBOOK_CLIENT)%'
             $facebookSecret:        '%env(resolve:FACEBOOK_SECRET)%'
             $facebookGraphVersion:  '%env(resolve:FACEBOOK_GRAPH_VERSION)%'
@@ -25,12 +25,21 @@ services:
         tags:
             - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }
     
-    app.images.s3:
-        class: Aws\S3\S3Client
+    #app.images.s3:
+    #    class: Aws\S3\S3Client
+    #    arguments:
+    #        - version: '%env(resolve:VERSION)%'
+    #          region: '%env(resolve:REGION)%'
+    #          endpoint: '%env(resolve:ENDPOINT)%'
+    #          credentials:
+    #              key: '%env(resolve:KEY)%'
+    #              secret: '%env(resolve:SECRET)%'
+
+    Aws\S3\S3Client:
         arguments:
-            - version: '%env(resolve:VERSION)%'
-              region: '%env(resolve:REGION)%'
-              endpoint: '%env(resolve:ENDPOINT)%'
-              credentials:
-                  key: '%env(resolve:KEY)%'
-                  secret: '%env(resolve:SECRET)%'
+            -
+                version: '2006-03-01' # or 'latest'
+                region: "eu-west-3" # 'eu-central-1' for example
+                credentials:
+                    key: '%env(AWS_S3_ACCESS_ID)%'
+                    secret: '%env(AWS_S3_ACCESS_SECRET)%'

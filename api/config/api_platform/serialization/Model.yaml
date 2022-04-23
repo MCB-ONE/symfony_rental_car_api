@@ -8,10 +8,6 @@ App\Entity\Model:
       groups: [model_read, model_post]
     pricePerDay:
       groups: [model_read, model_post]
-    stock:
-      groups: [model_read, model_post]
-    availabilityFlag:
-      groups: [model_read, model_post]
     seatingCapacity:
       groups: [model_read, model_post]
     fuelType:

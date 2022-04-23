@@ -6,11 +6,6 @@ App\Entity\Vehicle:
     create:
       method: POST
       path: /vehicle/create
-      controller: App\Api\Action\Vehicle\Create
-      denormalization_context:
-        groups: [vehicle_post]
-      openapi_context:
-        summary: Create a new Vehicle
   itemOperations:
     get:
       method: GET

@@ -9,6 +9,7 @@
         "ext-iconv": "*",
         "ext-json": "*",
         "api-platform/core": "^2.5",
+        "aws/aws-sdk-php": "^3.87",
         "composer/package-versions-deprecated": "1.11.99.5",
         "doctrine/annotations": "^1.0",
         "doctrine/common": "^2",

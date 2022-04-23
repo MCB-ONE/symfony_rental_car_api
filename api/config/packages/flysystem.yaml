@@ -3,6 +3,6 @@ flysystem:
         default.storage:
             adapter: 'aws'
             options:
-                client: 'app.images.s3'
-                bucket: '%env(resolve:BUCKET)%'
+                client: Aws\S3\S3Client
+                bucket: '%env(AWS_S3_BUCKET_NAME)%'
                 prefix: '%env(resolve:PREFIX)%'

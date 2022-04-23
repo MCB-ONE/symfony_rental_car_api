@@ -4,16 +4,16 @@
         <id name="id" type="string" length="36"/>
 
         <field name="plateNumber" length="7" />
-        <field name="modelYear" type="integer" />
+        <field name="availabilityFlag" type="boolean" />
+        <field name="registrationYear" type="integer" />
         <field name="createdAt" type="datetime"/>
         <field name="updatedAt" type="datetime"/>
         <unique-constraints>
             <unique-constraint columns="plate_number" name="UNIQ_vehicle_plateNumber" />
         </unique-constraints>
-        <many-to-one field="model" target-entity="App\Entity\Model" inversed-by="vehicles" />
-        <indexes>
-            <index columns="model_id" name="IDX_vehicle_model_id" />
-        </indexes>
+        <many-to-one field="model" target-entity="App\Entity\Model" inversed-by="vehicles">
+            <join-column name="model_id" referenced-column-name="id" />
+        </many-to-one>
         <lifecycle-callbacks>
             <lifecycle-callback type="preUpdate" method="markAsUpdated"/>
         </lifecycle-callbacks>

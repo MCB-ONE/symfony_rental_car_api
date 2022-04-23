@@ -39,6 +39,7 @@ class FileService
 
     public function validateFile(Request $request, string $inputName): UploadedFile
     {
+        
         if (null === $file = $request->files->get($inputName)) {
             throw new BadRequestHttpException(\sprintf('Cannot get file with input name %s', $inputName));
         }

@@ -3,7 +3,6 @@ App\Entity\Model:
     __construct:
       name: Focus
       pricePerDay: 35.50
-      stock: 0
       fuelType: Diesel
       seatingCapacity: 5
       gearSystem: Manual
@@ -11,7 +10,6 @@ App\Entity\Model:
     __construct:
       name: Leon
       pricePerDay: 30
-      stock: 0
       fuelType: Diesel
       seatingCapacity: 5
       gearSystem: Manual

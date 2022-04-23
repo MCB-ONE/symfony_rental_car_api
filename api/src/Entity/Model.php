@@ -12,8 +12,6 @@ class Model
     private string $name;
     private ?string $overview;
     private float $pricePerDay;
-    private int $stock;
-    private bool $availabilityFlag;
     private string $fuelType;
     private int $seatingCapacity;
     private ?string $image;
@@ -27,8 +25,6 @@ class Model
         string $name,
         ?string $overview = null,
         float $pricePerDay,
-        int $stock,
-        bool $availabilityFlag = false,
         string $fuelType,
         int $seatingCapacity,
         ?string $image = null,
@@ -39,8 +35,6 @@ class Model
         $this->name = $name;
         $this->overview = $overview;
         $this->pricePerDay = $pricePerDay;
-        $this->stock = $stock;
-        $this->availabilityFlag = $availabilityFlag;
         $this->fuelType = $fuelType;
         $this->seatingCapacity = $seatingCapacity;
         $this->image = $image;
@@ -83,16 +77,6 @@ class Model
         return $this->pricePerDay;
     }
 
-    public function setStock(float $stock): void
-    {
-        $this->stock = $stock;
-    }
-
-    public function getStock(): int
-    {
-        return $this->stock;
-    }
-
     public function setPricePerDay(int $pricePerDay): void
     {
         $this->pricePerDay = $pricePerDay;
@@ -106,16 +90,6 @@ class Model
     public function setFuelType(string $fuelType): void
     {
         $this->fuelType = $fuelType;
-    }
-
-    public function getAvailabilityFlag(): ?bool
-    {
-        return $this->availabilityFlag;
-    }
-
-    public function setAvailabilityFlag(?bool $availabilityFlag): void
-    {
-        $this->availabilityFlag = $availabilityFlag;
     }
 
     public function getSeatingCapacity(): int

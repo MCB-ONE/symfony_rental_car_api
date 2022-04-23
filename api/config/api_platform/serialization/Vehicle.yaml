@@ -4,10 +4,12 @@ App\Entity\Vehicle:
       groups: [vehicle_read]
     plateNumber:
       groups: [vehicle_read, vehicle_post, vehicle_update]
-    modelYear:
+    availabilityFlag:
+      groups: [vehicle_read, vehicle_post, vehicle_update]
+    registrationYear:
       groups: [vehicle_read, vehicle_post, vehicle_update]
     model:
-      groups: [vehicle_read]
+      groups: [vehicle_read, vehicle_post, vehicle_update]
     createdAt:
       groups: [vehicle_read]
     updatedAt:
