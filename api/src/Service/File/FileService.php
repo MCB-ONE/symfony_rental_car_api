@@ -14,6 +14,7 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 class FileService
 {
     public const AVATAR_INPUT_NAME = 'avatar';
+    public const MODEL_INPUT_NAME = 'model';
     private FilesystemInterface $defaultStorage;
     private LoggerInterface $logger;
     private string $mediaPath;

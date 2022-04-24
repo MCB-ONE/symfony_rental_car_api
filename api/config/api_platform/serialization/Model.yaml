@@ -4,6 +4,10 @@ App\Entity\Model:
       groups: [model_read]
     name:
       groups: [model_read, model_post]
+    maker:
+      groups: [model_read, model_post]
+    category:
+      groups: [model_read, model_post]
     overview:
       groups: [model_read, model_post]
     pricePerDay:

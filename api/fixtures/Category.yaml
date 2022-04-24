@@ -1,0 +1,10 @@
+App\Entity\Category:
+  Category-0:
+    __construct:
+      name: Económico
+  Category-1:
+    __construct:
+      name: Compacto
+  Category-2:
+    __construct:
+      name: Monovolumen

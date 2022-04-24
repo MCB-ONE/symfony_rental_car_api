@@ -11,6 +11,22 @@ App\Entity\Model:
         groups: [model_post]
       openapi_context:
         summary: Create a new vehicle Model
+    upload_image:
+      method: POST
+      path: /models/{id}/image
+      controller: App\Api\Action\Model\UploadImage
+      deserialize: false
+      openapi_context:
+        summary: Updates the a vehicle's model image 
+        requestBody:
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  model:
+                    type: string
+                    format: binary
   itemOperations:
     get:
       method: GET

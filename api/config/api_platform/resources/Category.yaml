@@ -1,0 +1,26 @@
+App\Entity\Category:
+  attributes:
+    normalization_context:
+      groups: [category_read]
+  collectionOperations:
+    create:
+      method: POST
+      path: /category/create
+      denormalization_context:
+        groups: [category_post]
+      openapi_context:
+        summary: Create a new vehicle Category
+  itemOperations:
+    get:
+      method: GET
+    put:
+      method: PUT
+      denormalization_context:
+        groups: [category_update]
+  properties: 
+    vehicles: 
+      subresource:
+        resourceClass: App\Entity\Vehicle
+        collection: true
+        maxDepth: 1
+        

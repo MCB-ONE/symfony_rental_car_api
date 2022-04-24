@@ -1,0 +1,29 @@
+App\Entity\Maker:
+  attributes:
+    normalization_context:
+      groups: [maker_read]
+  collectionOperations:
+    create:
+      method: POST
+      path: /maker/create
+      controller: App\Api\Action\Maker\Create
+      denormalization_context:
+        groups: [maker_post]
+      openapi_context:
+        summary: Create a new vehicle's model maker
+  itemOperations:
+    get:
+      method: GET
+    put:
+      method: PUT
+      denormalization_context:
+        groups: [maker_update]
+    delete:
+      method: DELETE
+  properties: 
+    models: 
+      subresource:
+        resourceClass: App\Entity\Model
+        collection: true
+        maxDepth: 1
+        

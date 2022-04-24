@@ -1,11 +1,13 @@
 App\Entity\Model:
   Model-0:
     __construct:
-      name: Focus
+      name: Ibiza
       pricePerDay: 35.50
       fuelType: Diesel
       seatingCapacity: 5
       gearSystem: Manual
+      maker: '@Maker-1'
+      category: '@Category-0'
   Model-1:
     __construct:
       name: Leon
@@ -13,3 +15,50 @@ App\Entity\Model:
       fuelType: Diesel
       seatingCapacity: 5
       gearSystem: Manual
+      maker: '@Maker-1'
+      category: '@Category-0'
+  Model-2:
+    __construct:
+      name: "500"
+      pricePerDay: 28.50
+      fuelType: Diesel
+      seatingCapacity: 5
+      gearSystem: Manual
+      maker: '@Maker-0'
+      category: '@Category-0'
+  Model-3:
+    __construct:
+      name: Megane
+      pricePerDay: 40.50
+      fuelType: Diesel
+      seatingCapacity: 5
+      gearSystem: Manual
+      maker: '@Maker-0'
+      category: '@Category-1'
+  Model-4:
+    __construct:
+      name: A1
+      pricePerDay: 50.50
+      fuelType: Gasolina
+      seatingCapacity: 5
+      gearSystem: Automático
+      maker: '@Maker-4'
+      category: '@Category-1'
+  Model-5:
+    __construct:
+      name: Touareg
+      pricePerDay: 60
+      fuelType: Gasolina
+      seatingCapacity: 5
+      gearSystem: Automático
+      maker: '@Maker-5'
+      category: '@Category-2'
+  Model-6:
+    __construct:
+      name: Touran
+      pricePerDay: 50
+      fuelType: Gasolina
+      seatingCapacity: 5
+      gearSystem: Automático
+      maker: '@Maker-5'
+      category: '@Category-2'

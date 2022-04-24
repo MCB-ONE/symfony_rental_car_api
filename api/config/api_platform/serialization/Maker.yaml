@@ -1,0 +1,12 @@
+App\Entity\Maker:
+  attributes:
+    id:
+      groups: [maker_read]
+    name:
+      groups: [maker_read, maker_post]
+    moodels:
+      groups: [maker_read, maker_post]
+    createdAt:
+      groups: [maker_read]
+    updatedAt:
+      groups: [maker_read]

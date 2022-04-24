@@ -16,7 +16,8 @@ class Model
     private int $seatingCapacity;
     private ?string $image;
     private string $gearSystem;
-    /* private ?Brand $brand; */
+    private Maker $maker;
+    private Category $category;
     private Collection $vehicles;
     private \DateTime $createdAt;
     private \DateTime $updatedAt;
@@ -28,8 +29,9 @@ class Model
         string $fuelType,
         int $seatingCapacity,
         ?string $image = null,
-        string $gearSystem
-        /* private ?Brand $brand; */
+        string $gearSystem,
+        Maker $maker,
+        Category $category
     ) {
         $this->id = Uuid::v4()->toRfc4122();
         $this->name = $name;
@@ -39,10 +41,11 @@ class Model
         $this->seatingCapacity = $seatingCapacity;
         $this->image = $image;
         $this->gearSystem = $gearSystem;
-        /* $this->brand = null; */
+        $this->maker = $maker;
         $this->createdAt = new \DateTime();
         $this->markAsUpdated();
         $this->vehicles = new ArrayCollection();
+        $this->category = $category;
     }
 
 
@@ -137,15 +140,25 @@ class Model
         $this->updatedAt = new \DateTime();
     }
 
-    /* public function getBrand(): ?Brand
+    public function getMaker(): maker
     {
-        return $this->brand;
+        return $this->maker;
     }
 
-    public function setBrand(?Brand $brand): void
+    public function setMaker(maker $maker): void
     {
-        $this->brand = $brand;
-    } */
+        $this->maker = $maker;
+    }
+
+    public function getCategory(): Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(maker $category): void
+    {
+        $this->category = $category;
+    }
 
     /**
      * @return ArrayCollection|Collection

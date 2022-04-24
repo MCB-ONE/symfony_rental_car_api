@@ -11,6 +11,7 @@ api_platform:
             apiKey:
                 name: Authorization
                 type: header
+                
     enable_swagger_ui: true
     title: Symfony API Platform
     version: 1.0

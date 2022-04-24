@@ -16,4 +16,58 @@ App\Entity\Vehicle:
       plateNumber: 9942AWW
       availabilityFlag: true
       registrationYear: 2021
+      model: '@Model-2'
+  Vehicle-3:
+    __construct:
+      plateNumber: 0034JAA
+      availabilityFlag: true
+      registrationYear: 2019
       model: '@Model-1'
+  Vehicle-4:
+    __construct:
+      plateNumber: 8484RRR
+      availabilityFlag: true
+      registrationYear: 2020
+      model: '@Model-3'
+  Vehicle-5:
+    __construct:
+      plateNumber: 8879TWW
+      availabilityFlag: true
+      registrationYear: 2021
+      model: '@Model-4'
+  Vehicle-6:
+    __construct:
+      plateNumber: 1155JYY
+      availabilityFlag: true
+      registrationYear: 2019
+      model: '@Model-5'
+  Vehicle-7:
+    __construct:
+      plateNumber: 9595HHD
+      availabilityFlag: true
+      registrationYear: 2020
+      model: '@Model-6'
+  Vehicle-8:
+    __construct:
+      plateNumber: 4444AWW
+      availabilityFlag: true
+      registrationYear: 2021
+      model: '@Model-3'
+  Vehicle-9:
+    __construct:
+      plateNumber: 1000YUU
+      availabilityFlag: true
+      registrationYear: 2019
+      model: '@Model-5'
+  Vehicle-10:
+    __construct:
+      plateNumber: 4678HHD
+      availabilityFlag: true
+      registrationYear: 2020
+      model: '@Model-6'
+  Vehicle-11:
+    __construct:
+      plateNumber: 4456UII
+      availabilityFlag: true
+      registrationYear: 2021
+      model: '@Model-5'

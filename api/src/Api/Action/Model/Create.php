@@ -31,7 +31,9 @@ class Create
             RequestService::getField($request, 'fuelType'),
             RequestService::getField($request, 'seatingCapacity'),
             RequestService::getField($request, 'image'),
-            RequestService::getField($request, 'gearSystem')
+            RequestService::getField($request, 'gearSystem'),
+            RequestService::getField($request, 'maker'),
+            RequestService::getField($request, 'category'),
         );
     }
 }

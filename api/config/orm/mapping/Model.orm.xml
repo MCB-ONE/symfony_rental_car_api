@@ -4,7 +4,6 @@
         <id name="id" type="string" length="36"/>
 
         <field name="name" length="100"/>
-        <!-- <field name="brandId" length="36" nullable="true"/> -->
         <field name="overview" length="1000" nullable="true"/>
         <field name="pricePerDay" type="float" scale="2" precision="5"/>
         <field name="fuelType" length="50"/>
@@ -16,11 +15,16 @@
         <unique-constraints>
             <unique-constraint columns="name" name="UNIQ_model_name" />
         </unique-constraints>
-        <one-to-many field="vehicles" target-entity="App\Entity\Vehicle" mapped-by="model"/>
-        <!-- <indexes>
-            <index name="IDX_brand_id" columns="brand_id" />
+        <one-to-many field="vehicles" target-entity="App\Entity\Vehicle" mapped-by="model">
+            <cascade>
+                <cascade-remove/>
+            </cascade>        
+        </one-to-many>
+        <indexes>
+            <index name="IDX_model_maker_id" columns="maker_id" />
         </indexes>
-        <many-to-one field="brand" target-entity="Brand" /> -->
+        <many-to-one field="maker" target-entity="App\Entity\Maker" inversed-by="models" />
+        <many-to-one field="category" target-entity="App\Entity\Category" inversed-by="models" />
         <lifecycle-callbacks>
             <lifecycle-callback type="preUpdate" method="markAsUpdated"/>
         </lifecycle-callbacks>

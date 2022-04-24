@@ -1,24 +1,27 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Uid\Uuid;
 
-class Brand 
+class Category
 {
+
     private string $id;
     private string $name;
+    private Collection $models;
     private \DateTime $createdAt;
     private \DateTime $updatedAt;
 
-    public function __construct(string $name, string $email)
+    public function __construct(string $name)
     {
         $this->id = Uuid::v4()->toRfc4122();
         $this->name = $name;
         $this->createdAt = new \DateTime();
         $this->markAsUpdated();
+        $this->models = new ArrayCollection();
     }
 
     public function getId(): string
@@ -51,5 +54,27 @@ class Brand
         $this->updatedAt = new \DateTime();
     }
 
+        /**
+     * @return ArrayCollection|Collection
+     */
+    public function getModels() 
+    {
+        return $this->models;
+    }
+
+    public function addModel(Model $model): void
+    {
+        if (!$this->models->contains($model)){
+            $this->models->add($model);
+        }
+
+    }
+
+    public function removeModel(Model $model): void
+    {
+        if ($this->models->contains($model)){
+            $this->models->removeElement($model);
+        }
+    }
 
 }

@@ -1,0 +1,19 @@
+App\Entity\Maker:
+  Maker-0:
+    __construct:
+      name: Fiat
+  Maker-1:
+    __construct:
+      name: Seat
+  Maker-2:
+    __construct:
+      name: Ford
+  Maker-3:
+    __construct:
+      name: Renault
+  Maker-4:
+    __construct:
+      name: Audi
+  Maker-5:
+    __construct:
+      name: Volkswagen
