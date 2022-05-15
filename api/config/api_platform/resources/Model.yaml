@@ -2,7 +2,11 @@ App\Entity\Model:
   attributes:
     normalization_context:
       groups: [model_read]
+    filters: 
+      - app.custom.order_filter
+    pagination_items_per_page: 9
   collectionOperations:
+    get:
     create:
       method: POST
       path: /model/create
@@ -17,7 +21,7 @@ App\Entity\Model:
       controller: App\Api\Action\Model\UploadImage
       deserialize: false
       openapi_context:
-        summary: Updates the a vehicle's model image 
+        summary: Updates a vehicle's model image 
         requestBody:
           content:
             multipart/form-data:

@@ -33,7 +33,7 @@ App\Entity\Model:
       fuelType: Diesel
       seatingCapacity: 5
       gearSystem: Manual
-      maker: '@Maker-0'
+      maker: '@Maker-3'
       category: '@Category-1'
   Model-4:
     __construct:
@@ -61,4 +61,76 @@ App\Entity\Model:
       seatingCapacity: 5
       gearSystem: Automático
       maker: '@Maker-5'
+      category: '@Category-2'
+  Model-7:
+    __construct:
+      name: Panda
+      pricePerDay: 35
+      fuelType: Gasolina
+      seatingCapacity: 4
+      gearSystem: Automático
+      maker: '@Maker-0'
+      category: '@Category-0'
+  Model-8:
+    __construct:
+      name: Punto
+      pricePerDay: 38
+      fuelType: Gasolina
+      seatingCapacity: 5
+      gearSystem: Manual
+      maker: '@Maker-0'
+      category: '@Category-0'
+  Model-9:
+    __construct:
+      name: Tipo
+      pricePerDay: 42
+      fuelType: Gasolina
+      seatingCapacity: 5
+      gearSystem: Manual
+      maker: '@Maker-0'
+      category: '@Category-1'
+  Model-10:
+    __construct:
+      name: Golf
+      pricePerDay: 50
+      fuelType: Gasolina
+      seatingCapacity: 5
+      gearSystem: Manual
+      maker: '@Maker-5'
+      category: '@Category-1'
+  Model-11:
+    __construct:
+      name: Polo
+      pricePerDay: 45
+      fuelType: Gasolina
+      seatingCapacity: 5
+      gearSystem: Manual
+      maker: '@Maker-5'
+      category: '@Category-1'
+  Model-12:
+    __construct:
+      name: Ecosport
+      pricePerDay: 53
+      fuelType: Gasolina
+      seatingCapacity: 5
+      gearSystem: Manual
+      maker: '@Maker-2'
+      category: '@Category-2'
+  Model-13:
+    __construct:
+      name: Focus
+      pricePerDay: 42
+      fuelType: Gasolina
+      seatingCapacity: 5
+      gearSystem: Manual
+      maker: '@Maker-2'
+      category: '@Category-1'
+  Model-14:
+    __construct:
+      name: Galaxi
+      pricePerDay: 48
+      fuelType: Diesel
+      seatingCapacity: 7
+      gearSystem: Manual
+      maker: '@Maker-2'
       category: '@Category-2'

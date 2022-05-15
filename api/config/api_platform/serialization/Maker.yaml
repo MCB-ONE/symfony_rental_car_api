@@ -3,7 +3,7 @@ App\Entity\Maker:
     id:
       groups: [maker_read]
     name:
-      groups: [maker_read, maker_post]
+      groups: [maker_read, maker_post, model_read]
     moodels:
       groups: [maker_read, maker_post]
     createdAt:

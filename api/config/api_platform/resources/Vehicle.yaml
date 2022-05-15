@@ -3,6 +3,7 @@ App\Entity\Vehicle:
     normalization_context:
       groups: [vehicle_read]
   collectionOperations:
+    get:
     create:
       method: POST
       path: /vehicle/create

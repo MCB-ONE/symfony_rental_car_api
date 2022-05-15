@@ -3,6 +3,7 @@ App\Entity\User:
     normalization_context:
       groups: [user_read]
   collectionOperations:
+    get:
     register:
       method: POST
       path: /users/register

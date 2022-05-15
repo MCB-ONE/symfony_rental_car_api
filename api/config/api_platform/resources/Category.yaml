@@ -3,6 +3,7 @@ App\Entity\Category:
     normalization_context:
       groups: [category_read]
   collectionOperations:
+    get:
     create:
       method: POST
       path: /category/create
@@ -18,9 +19,9 @@ App\Entity\Category:
       denormalization_context:
         groups: [category_update]
   properties: 
-    vehicles: 
+    models: 
       subresource:
-        resourceClass: App\Entity\Vehicle
+        resourceClass: App\Entity\Models
         collection: true
         maxDepth: 1
         

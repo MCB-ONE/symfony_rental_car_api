@@ -3,6 +3,7 @@ App\Entity\Maker:
     normalization_context:
       groups: [maker_read]
   collectionOperations:
+    get:
     create:
       method: POST
       path: /maker/create

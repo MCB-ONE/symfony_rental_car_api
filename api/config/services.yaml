@@ -1,5 +1,6 @@
-parameters:
-
+imports:
+    - { resource: 'api_platform/filters/order-filter.yaml' }
+    
 services:
     _defaults:
         autowire: true
@@ -43,3 +44,6 @@ services:
                 credentials:
                     key: '%env(AWS_S3_ACCESS_ID)%'
                     secret: '%env(AWS_S3_ACCESS_SECRET)%'
+
+    App\Swagger\Decorator\ApiNormalizer:
+        decorates: 'api_platform.jsonld.normalizer.item'

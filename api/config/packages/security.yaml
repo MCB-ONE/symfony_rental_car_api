@@ -46,12 +46,30 @@ security:
             pattern: ^/api/v1/users/facebook/auth
             methods: [POST]
             security: false
-
-        vehicle_create:
-            pattern: ^/api/v1/vehicle/create
-            methods: [POST]
+        model_get_all:
+            pattern: ^/api/v1/models
+            methods: [GET]
             security: false
-    
+        model_get_one:
+            pattern: ^/api/v1/models/{id}
+            methods: [GET]
+            security: false
+        maker_get_all:
+            pattern: ^/api/v1/makers
+            methods: [GET]
+            security: false
+        maker_get_one:
+            pattern: ^/api/v1/makers/{id}
+            methods: [GET]
+            security: false
+        category_get_all:
+            pattern: ^/api/v1/categories
+            methods: [GET]
+            security: false
+        category_get_one:
+            pattern: ^/api/v1/categories/{id}
+            methods: [GET]
+            security: false
         api:
             pattern: ^/api/v1
             stateless: true
